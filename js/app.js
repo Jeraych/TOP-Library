@@ -7,3 +7,15 @@ function Book (title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
+
+Book.prototype.info = function () {
+  let word = "";
+  if (this.read) {
+    word = "read";
+  } else {
+    word = "not read yet"
+  }
+  this.info = function() {
+    return this.title + " by " + this.author + ", " + this.pages + " pages, " + word;
+  }
+}
