@@ -15,7 +15,13 @@ Book.prototype.info = function () {
   } else {
     word = "not read yet"
   }
-  this.info = function() {
-    return this.title + " by " + this.author + ", " + this.pages + " pages, " + word;
-  }
+
+  return this.title + " by " + this.author + ", " + this.pages + " pages, " + word;
+}
+
+const myLibrary = [];
+
+function addBookToLibrary(title, author, pages, read) {
+  let book = new Book(title, author, pages, read);
+  myLibrary.push(book);
 }
