@@ -47,21 +47,22 @@ function displayBooks() {
   console.log(outLayout);
   console.log(inLayout);
   myLibrary.forEach(book => {
-    console.log("| " + book.title + " |");
+    const space = maxTitleLength - book.title.length;
+    console.log("| " + " ".repeat(space/2) + book.title + " ".repeat(Math.round(space/2)) + " |");
   })
   console.log(inLayout);
   console.log(outLayout);
 }
 
-// addBookToLibrary("The Pragmatic Programmer", "Andrew Hunt", 352, true);
-// addBookToLibrary("Clean Code", "Robert C. Martin", 464, false);
-// addBookToLibrary("1984", "George Orwell", 328, true);
-// addBookToLibrary("Dune", "Frank Herbert", 688, false);
-// addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
-// addBookToLibrary("Atomic Habits", "James Clear", 320, true);
-// addBookToLibrary("Neuromancer", "William Gibson", 271, false);
-// addBookToLibrary("Design Patterns", "Erich Gamma", 395, false);
-// addBookToLibrary("The Art of War", "Sun Tzu", 273, true);
-// addBookToLibrary("Deep Work", "Cal Newport", 304, false);
+addBookToLibrary("The Pragmatic Programmer", "Andrew Hunt", 352, true);
+addBookToLibrary("Clean Code", "Robert C. Martin", 464, false);
+addBookToLibrary("1984", "George Orwell", 328, true);
+addBookToLibrary("Dune", "Frank Herbert", 688, false);
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
+addBookToLibrary("Atomic Habits", "James Clear", 320, true);
+addBookToLibrary("Neuromancer", "William Gibson", 271, false);
+addBookToLibrary("Design Patterns", "Erich Gamma", 395, false);
+addBookToLibrary("The Art of War", "Sun Tzu", 273, true);
+addBookToLibrary("Deep Work", "Cal Newport", 304, false);
 
 displayBooks();
