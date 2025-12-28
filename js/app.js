@@ -51,6 +51,7 @@ function displayBooks() {
   myLibrary.forEach(book => {
     const space = maxTitleLength - book.title.length;
     console.log("| " + " ".repeat(space/2) + book.title + " ".repeat(Math.round(space/2)) + " |");
+    console.log(book.info());
   })
   console.log(inLayout);
   console.log(outLayout);
@@ -59,6 +60,8 @@ function displayBooks() {
   // HTML
   const bookList = document.getElementById("bookList");
 
+  bookList.innerHTML = "";
+
   myLibrary.forEach(book => {
     bookList.innerHTML += '<div class = "book">' +
       '<h3>' + book.title + '</h3>' +
@@ -66,8 +69,34 @@ function displayBooks() {
       '<span>' + book.pages + '</span>' +
       '</div>';
   })
-
 }
+
+function showForm() {
+  const form = document.getElementById("bookForm");
+  form.hidden = false;
+}
+
+function hideForm() {
+  const form = document.getElementById("bookForm");
+  form.hidden = true;
+}
+
+function addBook(event) {
+  event.preventDefault();
+  const title = document.getElementById("titleInput").value;
+  const author = document.getElementById("authorInput").value;
+  const pages = document.getElementById("pagesInput").value;
+  const read = document.getElementById("readInput").checked;
+  addBookToLibrary(title, author, pages, read);
+  hideForm();
+  displayBooks();
+}
+
+const addBookBtn = document.getElementById("addBookBtn");
+addBookBtn.addEventListener("click", showForm);
+
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", addBook);
 
 addBookToLibrary("The Pragmatic Programmer", "Andrew Hunt", 352, true);
 addBookToLibrary("Clean Code", "Robert C. Martin", 464, false);

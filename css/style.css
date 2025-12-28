@@ -334,3 +334,76 @@ header button:hover {
   font-size: 0.8rem;
   color: #777;
 }
+
+/* Form container */
+#bookForm {
+  margin-top: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+}
+
+/* Title */
+#bookForm h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* Form layout */
+#bookForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* Inputs */
+#bookForm input {
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+#bookForm input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+/* Checkbox row */
+#bookForm label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Submit button */
+#bookForm button {
+  margin-top: 0.5rem;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#bookForm button:hover {
+  background: #4338ca;
+}
+
+#bookForm {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#bookForm[hidden] {
+  transform: translateY(-10px);
+  opacity: 0;
+}
