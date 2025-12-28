@@ -27,14 +27,21 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(book);
 }
 
+function deleteBookFromLibrary(id) {
+  let book = myLibrary.find((book) => book.id = id);
+  myLibrary.splice(myLibrary.indexOf(book), 1);
+}
+
 function displayBooks() {
 
+  const bookList = document.getElementById("bookList");
 
   // Console logs
   if (myLibrary.length === 0) {
     console.log("=".repeat(28));
     console.log("|" + " ".repeat(5) + "Library is Empty" + " ".repeat(5) + "|");
     console.log("=".repeat(28));
+    bookList.innerHTML = "";
     return;
   }
 
@@ -58,18 +65,19 @@ function displayBooks() {
 
 
   // HTML
-  const bookList = document.getElementById("bookList");
 
   bookList.innerHTML = "";
 
   myLibrary.forEach(book => {
-    bookList.innerHTML += '<div data-id = ${book.id} class = "book">' +
-      '<h3>' + book.title + '</h3>' +
-      '<p>' + book.author + '</p>' +
-      '<span>' + book.pages + '</span>' +
-      '<button class="delete-btn">Delete</button>' +
-      '</div>';
-  })
+    bookList.innerHTML += `
+    <div class="book">
+      <h3>${book.title}</h3>
+      <p>${book.author}</p>
+      <span>${book.pages}</span>
+      <button class="delete-btn" data-id="${book.id}">Delete</button>
+    </div>
+  `;
+  });
 }
 
 function showForm() {
@@ -98,6 +106,16 @@ addBookBtn.addEventListener("click", showForm);
 
 const submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", addBook);
+
+const bookList = document.getElementById("bookList");
+bookList.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("delete-btn")) return;
+
+  const bookId = e.target.dataset.id;
+
+  deleteBookFromLibrary(bookId);
+  displayBooks();
+})
 
 addBookToLibrary("The Pragmatic Programmer", "Andrew Hunt", 352, true);
 addBookToLibrary("Clean Code", "Robert C. Martin", 464, false);
