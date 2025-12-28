@@ -23,11 +23,34 @@
 </head>
 
 <body>
+<main class="library-app">
+  <header>
+    <h1>My Library</h1>
+    <button id="addBookBtn">New Book</button>
+  </header>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+  <!-- Book list container -->
+  <section id="bookList" class="book-list">
+    <!-- JS will inject book cards here -->
+  </section>
 
+  <!-- Optional: Add book form -->
+  <section id="bookForm" hidden>
+    <h2>Add New Book</h2>
+    <form>
+      <input id="titleInput" placeholder="Title" required />
+      <input id="authorInput" placeholder="Author" required />
+      <input id="pagesInput" type="number" placeholder="Pages" />
+      <label>
+        <input id="readInput" type="checkbox" />
+        Read
+      </label>
+      <button type="submit">Save</button>
+    </form>
+  </section>
+</main>
 </body>
+
+<script src="js/app.js"></script>
 
 </html>

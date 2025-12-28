@@ -29,6 +29,8 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks() {
 
+
+  // Console logs
   if (myLibrary.length === 0) {
     console.log("=".repeat(28));
     console.log("|" + " ".repeat(5) + "Library is Empty" + " ".repeat(5) + "|");
@@ -52,6 +54,19 @@ function displayBooks() {
   })
   console.log(inLayout);
   console.log(outLayout);
+
+
+  // HTML
+  const bookList = document.getElementById("bookList");
+
+  myLibrary.forEach(book => {
+    bookList.innerHTML += '<div class = "book">' +
+      '<h3>' + book.title + '</h3>' +
+      '<p>' + book.author + '</p>' +
+      '<span>' + book.pages + '</span>' +
+      '</div>';
+  })
+
 }
 
 addBookToLibrary("The Pragmatic Programmer", "Andrew Hunt", 352, true);
