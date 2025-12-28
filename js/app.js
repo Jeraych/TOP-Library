@@ -63,10 +63,11 @@ function displayBooks() {
   bookList.innerHTML = "";
 
   myLibrary.forEach(book => {
-    bookList.innerHTML += '<div class = "book">' +
+    bookList.innerHTML += '<div data-id = ${book.id} class = "book">' +
       '<h3>' + book.title + '</h3>' +
       '<p>' + book.author + '</p>' +
       '<span>' + book.pages + '</span>' +
+      '<button class="delete-btn">Delete</button>' +
       '</div>';
   })
 }

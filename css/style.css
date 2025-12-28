@@ -407,3 +407,18 @@ header button:hover {
   transform: translateY(-10px);
   opacity: 0;
 }
+
+.delete-btn {
+  margin-top: 0.6rem;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 6px;
+  background: #dc2626;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
