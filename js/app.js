@@ -94,13 +94,15 @@ function displayBooks() {
 }
 
 function showForm() {
-  const form = document.getElementById("bookForm");
-  form.hidden = false;
+  const overlay = document.getElementById("bookFormOverlay");
+  overlay.hidden = false;
 }
 
 function hideForm() {
-  const form = document.getElementById("bookForm");
-  form.hidden = true;
+  const overlay = document.getElementById("bookFormOverlay");
+  const form = document.querySelector("#bookForm form");
+  form.reset();
+  overlay.hidden = true;
 }
 
 function addBook(event) {
@@ -119,6 +121,9 @@ addBookBtn.addEventListener("click", showForm);
 
 const submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", addBook);
+
+const closeBtn = document.getElementById("closeFormBtn");
+closeBtn.addEventListener("click", hideForm);
 
 const bookList = document.getElementById("bookList");
 bookList.addEventListener("click", (e) => {

@@ -35,19 +35,24 @@
   </section>
 
   <!-- Optional: Add book form -->
-  <section id="bookForm" hidden>
-    <h2>Add New Book</h2>
-    <form>
-      <input id="titleInput" placeholder="Title" required />
-      <input id="authorInput" placeholder="Author" required />
-      <input id="pagesInput" type="number" placeholder="Pages" />
-      <label>
-        <input id="readInput" type="checkbox" />
-        Read
-      </label>
-      <button id="submitBtn" type="submit">Save</button>
-    </form>
-  </section>
+  <!-- Overlay container -->
+  <div id="bookFormOverlay" hidden>
+    <section id="bookForm">
+      <h2>Add New Book</h2>
+      <form>
+        <input id="titleInput" placeholder="Title" required />
+        <input id="authorInput" placeholder="Author" required />
+        <input id="pagesInput" type="number" placeholder="Pages" />
+        <label>
+          <input id="readInput" type="checkbox" />
+          Read
+        </label>
+        <button id="submitBtn" type="submit">Save</button>
+        <button type="button" id="closeFormBtn">Cancel</button>
+      </form>
+    </section>
+  </div>
+
 </main>
 </body>
 
