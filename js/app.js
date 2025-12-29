@@ -20,6 +20,10 @@ Book.prototype.info = function () {
   return this.title + " by " + this.author + ", " + this.pages + " pages, " + word;
 }
 
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+}
+
 const myLibrary = [];
 
 function addBookToLibrary(title, author, pages, read) {
@@ -34,7 +38,7 @@ function deleteBookFromLibrary(id) {
 
 function readBook(id) {
   let book = myLibrary.find((book) => book.id === id);
-  book.read = !book.read;
+  book.toggleRead();
 }
 
 function displayBooks() {
