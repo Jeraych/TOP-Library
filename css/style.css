@@ -422,3 +422,50 @@ header button:hover {
 .delete-btn:hover {
   background: #b91c1c;
 }
+
+/* Read toggle container */
+.book label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Hide default checkbox */
+.book input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid #9ca3af;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+/* Checkmark */
+.book input[type="checkbox"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: scale(0);
+  transition: transform 0.12s ease;
+  background: #4f46e5;
+  border-radius: 2px;
+}
+
+/* Checked state */
+.book input[type="checkbox"]:checked {
+  border-color: #4f46e5;
+}
+
+.book input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Optional: subtle hover */
+.book label:hover input[type="checkbox"] {
+  border-color: #6366f1;
+}

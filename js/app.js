@@ -73,7 +73,11 @@ function displayBooks() {
     <div class="book">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
-      <span>${book.pages}</span>
+      <span>${book.pages} pages</span>
+      <label>
+        <input type="checkbox"/>
+        Read
+      </label>
       <button class="delete-btn" data-id="${book.id}">Delete</button>
     </div>
   `;
