@@ -7,6 +7,12 @@ The goal was to create a simple library app where users can add, display, toggle
 
 ---
 
+## Live Demo
+
+Try the project live here: [JavaScript Library Project Demo](https://jeraych.github.io/TOP-Library/)
+
+---
+
 ## Features
 
 - Add new books with title, author, number of pages, and read status.
