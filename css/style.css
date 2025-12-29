@@ -469,3 +469,11 @@ header button:hover {
 .book label:hover input[type="checkbox"] {
   border-color: #6366f1;
 }
+
+.book.read {
+  border-left: 5px solid #16a34a;
+}
+
+.book.unread {
+  border-left: 5px solid #dc2626;
+}

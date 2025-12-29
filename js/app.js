@@ -28,8 +28,13 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function deleteBookFromLibrary(id) {
-  let book = myLibrary.find((book) => book.id = id);
+  let book = myLibrary.find((book) => book.id === id);
   myLibrary.splice(myLibrary.indexOf(book), 1);
+}
+
+function readBook(id) {
+  let book = myLibrary.find((book) => book.id === id);
+  book.read = !book.read;
 }
 
 function displayBooks() {
@@ -70,12 +75,12 @@ function displayBooks() {
 
   myLibrary.forEach(book => {
     bookList.innerHTML += `
-    <div class="book">
+    <div class="book ${book.read ? "read" : "unread"}">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <span>${book.pages} pages</span>
       <label>
-        <input type="checkbox"/>
+        <input class="read-box" type="checkbox" data-id="${book.id}" ${book.read ? "checked" : ""}/>
         Read
       </label>
       <button class="delete-btn" data-id="${book.id}">Delete</button>
@@ -118,6 +123,14 @@ bookList.addEventListener("click", (e) => {
   const bookId = e.target.dataset.id;
 
   deleteBookFromLibrary(bookId);
+  displayBooks();
+})
+bookList.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("read-box")) return;
+
+  const bookId = e.target.dataset.id;
+
+  readBook(bookId);
   displayBooks();
 })
 
