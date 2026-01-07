@@ -13,6 +13,16 @@ Try the project live here: [JavaScript Library Project Demo](https://jeraych.git
 
 ---
 
+## Screenshots
+
+### Dashboard
+![Dashboard](img/dashboard.png)
+
+### Add Book
+![Add Book](img/add-book.png)
+
+---
+
 ## Features
 
 - Add new books with title, author, number of pages, and read status.
